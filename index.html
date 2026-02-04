@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="bg-music" loop>
+        <!-- User needs to put yellow.mp3 in music folder, or we fallback -->
+        <source src="music/yellow.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- 1. Landing / Entry Screen -->
+    <div id="landing-screen" class="screen full-height flex-center">
+        <div class="heart-pulse">❤️</div>
+        <h1 class="script-font">For You...</h1>
+        <p class="tap-hint">(Tap anywhere to begin)</p>
+    </div>
+
+    <!-- 2. Intro Selection -->
+    <div id="intro-screen" class="screen full-height hidden flex-center">
+        <div class="content-wrapper">
+            <h2 id="line1" class="script-font" style="opacity: 0;"></h2>
+            <h2 id="line2" class="script-font" style="opacity: 0; margin-top: 20px;"></h2>
+        </div>
+    </div>
+
+    <!-- 3. Memory Lane Gallery -->
+    <div id="gallery-screen" class="screen full-height hidden">
+        <div class="gallery-container">
+            <!-- Images will be injected or hardcoded here depending on what we found -->
+            <div class="slide active-slide">
+                <img src="images/slide1.jpg" alt="Our Date">
+                <p class="caption">The days we laughed...</p>
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="Memory">
+                <p class="caption">The moments we shared...</p>
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="Roka" class="img2">
+                <p class="caption">The promise we made...</p>
+            </div>
+            <div class="slide">
+                <img src="images/celeb.jpeg" alt="Us" class="img2">
+                <p class="caption">You are my everything.</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="next-slide-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- 4. The Proposal -->
+    <div id="proposal-screen" class="screen full-height hidden flex-center">
+        <div class="proposal-content">
+            <div class="proposal-image-container">
+                <img src="images/surya.jpeg" class="main-photo" alt="Me">
+                <img src="images/komal.jpeg" class="main-photo overlay-photo" alt="You">
+            </div>
+            <h1 class="big-question">Will you be my forever?</h1>
+            <div class="buttons">
+                <button id="yes-btn" class="btn-primary hidden-btn">YES!</button>
+                <button id="no-btn" class="btn-secondary">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Celebration -->
+    <div id="celebration-screen" class="screen full-height hidden flex-center">
+        <h1 class="script-font huge-text">She Said YES!</h1>
+        <p>I Love You Forever & Always</p>
+        <div class="gallery-grid">
+            <!-- Just one perfect photo -->
+            <img src="images/final.jpeg" alt="Us Forever">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
